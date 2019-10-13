@@ -17,6 +17,8 @@ const (
 type StreamingService interface {
 	Connect()
 	RunPublisher()
+	RunSubscriber(config SubscriberConfig) error
+	PublisherPush(subject string, data []byte)
 	Close()
 }
 
